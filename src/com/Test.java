@@ -18,6 +18,8 @@ public class Test {
             }
             System.out.println("There are "+calories+" calories in the breakfast");
         }
+
+        //Сортировка в алфавитном порядке первой буквы названия (поле name в классе Egg)
         if(args[0].equals("-sort"))
         {
             Comparator comparator = new Comparator();

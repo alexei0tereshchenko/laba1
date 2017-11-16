@@ -12,6 +12,7 @@ public class Egg implements Nutritious {
         return calories;
     }
 
+    //Автоматически переопределиил equals для данного класса
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -22,11 +23,15 @@ public class Egg implements Nutritious {
         return numberOfEggs.equals(egg.numberOfEggs);
     }
 
+    //hashCode тоже переопределен автоматически
     @Override
     public int hashCode() {
         return numberOfEggs.hashCode();
     }
 
+
+    /*Подсчет яиц в завтраке. Вообще говоря, он считает не сами яйца, а колличество объектов класса Egg,
+    которые могут содержать одно, два или три яйца*/
     public int countEggs(ArrayList<Object> breakfast)
     {
         int eggCounter=0;
@@ -38,6 +43,8 @@ public class Egg implements Nutritious {
         return eggCounter;
     }
 
+  /*конструктор без параметров. При таком объявлении будет создаваться объект с параметром "один", т.е. одно яйцо
+    в объекте класса Egg*/
     public Egg()
     {
         this.numberOfEggs = "один";
@@ -58,6 +65,7 @@ public class Egg implements Nutritious {
         this.numberOfEggs = numberOfEggs;
     }
 
+    //Считает колличество калорий в объекте в зависимости от кол-ва яиц в нем
     public double calculateCalories() {
         if (this.numberOfEggs == "один")
             return this.getCalories();
